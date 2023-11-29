@@ -1,4 +1,4 @@
-# COP3530_program
+# Bryan Mena Algorithm Assignment
  
 # Quicksort Algorithm
 
