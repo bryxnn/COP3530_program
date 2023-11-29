@@ -1,88 +1,66 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <chrono>
-#include <ctime>
 #include <cstdlib>
+#include <ctime>
 
-using namespace std;
-using namespace chrono;
-
-// Quicksort function
-template <typename T>
-void quicksort(vector<T>& arr, int low, int high) {
-    if (low < high) {
-        int pivot = partition(arr, low, high);
-        quicksort(arr, low, pivot - 1);
-        quicksort(arr, pivot + 1, high);
-    }
-}
-
-// Partition function for quicksort
-template <typename T>
-int partition(vector<T>& arr, int low, int high) {
+// Quicksort Algorithm
+template<typename T>
+int partition(std::vector<T> &arr, int low, int high) {
     T pivot = arr[high];
     int i = low - 1;
 
-    for (int j = low; j <= high - 1; j++) {
+    for (int j = low; j < high; j++) {
         if (arr[j] < pivot) {
             i++;
-            swap(arr[i], arr[j]);
+            std::swap(arr[i], arr[j]);
         }
     }
 
-    swap(arr[i + 1], arr[high]);
+    std::swap(arr[i + 1], arr[high]);
     return i + 1;
 }
 
-// Function to generate a random dataset of given size
-vector<int> generateRandomDataset(int size) {
-    vector<int> data;
-    srand(static_cast<unsigned int>(time(0))); // Seed for random number generation
+template<typename T>
+void quicksort(std::vector<T> &arr, int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
 
-    for (int i = 0; i < size; ++i) {
-        data.push_back(rand() % 100); // Adjust the range as needed
+        quicksort(arr, low, pi - 1);
+        quicksort(arr, pi + 1, high);
+    }
+}
+
+// Function to generate random dataset
+std::vector<int> generateRandomData(int size) {
+    std::vector<int> data;
+    srand(static_cast<unsigned int>(time(nullptr)));
+
+    for (int i = 0; i < size; i++) {
+        data.push_back(rand() % 1000); // Generating random integers between 0 and 999
     }
 
     return data;
 }
 
 int main() {
-    // Example usage with execution time measurement
+    // Dataset sizes
+    std::vector<int> datasetSizes = {1000, 5000, 10000, 15000, 20000};
 
-    vector<int> data;
-    int datasetSizes[] = {10, 100, 1000, 10000};
+    std::cout << "Dataset Size\tExecution Time (ms)\n";
 
     for (int size : datasetSizes) {
-        // Generate random dataset
-        data = generateRandomDataset(size);
+        // Generating random dataset of current size
+        std::vector<int> data = generateRandomData(size);
 
-        // Measure execution time
-        auto start = high_resolution_clock::now();
-        
-        // Sort the dataset using quicksort
-        quicksort(data, 0, data.size() - 1);
+        // Measuring execution time
+        clock_t start = clock();
+        quicksort(data, 0, size - 1);
+        clock_t end = clock();
 
-        auto stop = high_resolution_clock::now();
-        auto duration = duration_cast<microseconds>(stop - start);
+        // Calculating execution time in milliseconds
+        double executionTime = (double)(end - start) / CLOCKS_PER_SEC * 1000;
 
-        cout << "Dataset size: " << size << " | Execution Time: " << duration.count() << " microseconds" << endl;
-
-        // Theoretical time complexity analysis
-        // For simplicity, let's consider the average case time complexity
-        int theoreticalTime = size * log2(size); // Adjust as needed based on your analysis
-
-        cout << "Theoretical Time Complexity: " << theoreticalTime << " (in arbitrary units)" << endl;
-
-        // Comparison with theoretical result
-        cout << "Comparison with Theoretical Result: ";
-        if (duration.count() > theoreticalTime) {
-            cout << "Actual time is higher than theoretical time. The algorithm may have some inefficiencies." << endl;
-        } else {
-            cout << "Actual time is consistent with theoretical expectations." << endl;
-        }
-
-        cout << "----------------------------------------------" << endl;
+        std::cout << size << "\t\t" << executionTime << std::endl;
     }
 
     return 0;
