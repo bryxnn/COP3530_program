@@ -40,11 +40,11 @@ The execution time is measured in milliseconds for each dataset size. The result
 To compile and run the program, follow these steps:
 
 1. Ensure you have a C++ compiler installed.
-2. Clone this repository or download the `quicksort.cpp` file.
+2. Clone this repository or download the `main.cpp` file.
 3. Compile the program using your preferred C++ compiler.
 4. Run the executable.
 
 ```bash
-g++ quicksort.cpp -o quicksort
-./quicksort
+g++ main.cpp -o main
+./main
 
