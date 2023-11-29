@@ -57,7 +57,7 @@ int main() {
     // Dataset sizes
     std::vector<int> datasetSizes = {1000, 5000, 10000, 15000, 20000};
 
-    std::cout << "Dataset Size\tExecution Time (ms)\n";
+    std::cout << "Dataset Size\tExecution Time (ms)\tIs it sorted?\n";
 
     for (int size : datasetSizes) {
         // Generating random dataset of current size
@@ -81,7 +81,7 @@ int main() {
         // Comparison with Theoretical Time Complexity:
         // In this case, you may want to analyze and compare the average and worst-case time complexities with the actual execution time.
 
-        std::cout << size << "\t\t" << executionTime << "\t\t" << (sorted ? "Yes" : "No") << std::endl;
+        std::cout << size << "\t\t" << executionTime << "\t\t\t" << (sorted ? "Yes" : "No") << std::endl;
     }
 
     return 0;
