@@ -78,6 +78,8 @@ int main() {
         // Checking if the array is sorted
         bool sorted = isSorted(data);
 
+        // Comparison with Theoretical Time Complexity:
+        // In this case, you may want to analyze and compare the average and worst-case time complexities with the actual execution time.
 
         std::cout << size << "\t\t" << executionTime << "\t\t" << (sorted ? "Yes" : "No") << std::endl;
     }
