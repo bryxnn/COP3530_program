@@ -42,6 +42,17 @@ std::vector<int> generateRandomData(int size) {
     return data;
 }
 
+// Function to check if the array is sorted
+template<typename T>
+bool isSorted(const std::vector<T>& arr) {
+    for (size_t i = 1; i < arr.size(); i++) {
+        if (arr[i] < arr[i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main() {
     // Dataset sizes
     std::vector<int> datasetSizes = {1000, 5000, 10000, 15000, 20000};
@@ -60,7 +71,11 @@ int main() {
         // Calculating execution time in milliseconds
         double executionTime = (double)(end - start) / CLOCKS_PER_SEC * 1000;
 
-        std::cout << size << "\t\t" << executionTime << std::endl;
+        // Checking if the array is sorted
+        bool sorted = isSorted(data);
+
+
+        std::cout << size << "\t\t" << executionTime << "\t\t" << (sorted ? "Yes" : "No") << std::endl;
     }
 
     return 0;
