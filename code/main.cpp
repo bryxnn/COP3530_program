@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <cstdlib>
 #include <ctime>
@@ -57,7 +58,9 @@ int main() {
     // Dataset sizes
     std::vector<int> datasetSizes = {10, 100, 1000, 5000, 10000, 50000, 100000, 250000, 500000, 750000};
 
-    std::cout << "Dataset Size\tExecution Time (ms)\tIs it sorted?\n";
+    // Open a CSV file for writing
+    std::ofstream outputFile("execution_times.csv");
+    outputFile << "Dataset Size,Execution Time (ms),Is it sorted?\n";
 
     for (int size : datasetSizes) {
         // Generating random dataset of current size
@@ -74,8 +77,12 @@ int main() {
         // Checking if the array is sorted
         bool sorted = isSorted(data);
 
-        std::cout << size << "\t\t" << executionTime << "\t\t\t" << (sorted ? "Yes" : "No") << std::endl;
+        // Write data to the CSV file
+        outputFile << size << "," << executionTime << "," << (sorted ? "Yes" : "No") << "\n";
     }
 
+    // Close the file
+    outputFile.close();
+
     return 0;
-} 
+}
