@@ -55,7 +55,7 @@ bool isSorted(const std::vector<T>& arr) {
 
 int main() {
     // Dataset sizes
-    std::vector<int> datasetSizes = {1000, 5000, 10000, 15000, 20000};
+    std::vector<int> datasetSizes = {10, 100, 1000, 5000, 10000, 50000, 100000, 250000, 500000, 750000, 100000000};
 
     std::cout << "Dataset Size\tExecution Time (ms)\tIs it sorted?\n";
 
