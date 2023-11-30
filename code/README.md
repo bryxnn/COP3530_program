@@ -25,11 +25,16 @@ The main program generates random datasets, applies the Quicksort algorithm, and
 
 The program uses the following dataset sizes for analysis:
 
+- 10
+- 100
 - 1000
 - 5000
 - 10000
-- 15000
-- 20000
+- 50000
+- 100000
+- 250000
+- 500000
+- 750000
 
 ## Execution Time
 
@@ -37,21 +42,31 @@ The execution time is measured in milliseconds for each dataset size. The result
 
 Execution Time (ms)
 0
-1
-1
-3
-3 
+0
+0
+6
+9
+83
+64
+237
+860
+1739
 
 ## Final Output
 
-The final output will be in the following format:
+An example of how the final output will be in the following format:
 
 Dataset Size    Execution Time (ms)     Is it sorted?
+10              0                       Yes
+100             0                       Yes
 1000            0                       Yes
-5000            1                       Yes
-10000           1                       Yes
-15000           3                       Yes
-20000           3                       Yes
+5000            6                       Yes
+10000           9                       Yes
+50000           83                      Yes
+100000          64                      Yes
+250000          237                     Yes
+500000          860                     Yes
+750000          1739                    Yes
 
 - **Dataset Size:** The size of the randomly generated dataset.
 - **Execution Time (ms):** The time taken by the Quicksort algorithm to sort the dataset in milliseconds.
