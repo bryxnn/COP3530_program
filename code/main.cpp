@@ -63,10 +63,6 @@ int main() {
         // Generating random dataset of current size
         std::vector<int> data = generateRandomData(size);
 
-        // Theoretical Time Complexity Analysis:
-        // For Quicksort, the average-case time complexity is O(n log n), while the worst-case time complexity is O(n^2).
-        // The best-case time complexity is O(n log n) when the pivot selection is optimal.
-
         // Measuring execution time
         clock_t start = clock();
         quicksort(data, 0, size - 1);
@@ -77,9 +73,6 @@ int main() {
 
         // Checking if the array is sorted
         bool sorted = isSorted(data);
-
-        // Comparison with Theoretical Time Complexity:
-        // In this case, you may want to analyze and compare the average and worst-case time complexities with the actual execution time.
 
         std::cout << size << "\t\t" << executionTime << "\t\t\t" << (sorted ? "Yes" : "No") << std::endl;
     }
