@@ -10,6 +10,7 @@ This C++ program implements the Quicksort algorithm and measures its execution t
 - [Usage](#usage)
 - [Dataset Sizes](#dataset-sizes)
 - [Execution Time](#execution-time)
+- [Final Output](#final-output)
 - [How to Run](#how-to-run)
 
 ## Introduction
@@ -34,13 +35,23 @@ The program uses the following dataset sizes for analysis:
 
 The execution time is measured in milliseconds for each dataset size. The results are printed in the following format:
 
+Execution Time (ms)
+0
+1
+1
+3
+3 
+
+## Final Output
+
+The final output will be in the following format:
+
 Dataset Size    Execution Time (ms)     Is it sorted?
 1000            0                       Yes
 5000            1                       Yes
 10000           1                       Yes
 15000           3                       Yes
 20000           3                       Yes
-
 
 - **Dataset Size:** The size of the randomly generated dataset.
 - **Execution Time (ms):** The time taken by the Quicksort algorithm to sort the dataset in milliseconds.
