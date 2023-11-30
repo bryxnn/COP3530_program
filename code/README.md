@@ -12,6 +12,8 @@ This C++ program implements the Quicksort algorithm and measures its execution t
 - [Execution Time](#execution-time)
 - [Final Output](#final-output)
 - [How to Run](#how-to-run)
+- [Graph Plotting](#graph-plotting)
+- [How to Run the Python Script](#how-to-run-the-python-script)
 
 ## Introduction
 
@@ -81,6 +83,22 @@ To compile and run the program, follow these steps:
 3. Compile the program using your preferred C++ compiler.
 4. Run the executable.
 
-```bash
 g++ main.cpp -o main
 ./main
+
+## Graph Plotting
+
+The Python script plot_graphs.py is included to visualize the observed execution times. The script uses the pandas and matplotlib libraries. Make sure to install them using the following commands:
+
+pip install pandas
+pip install matplotlib
+
+
+## How to Run the Python Script
+
+Navigate to the code directory and run the Python script:
+
+cd code
+python plot_graphs.py
+
+The script generates a line graph of observed execution times and saves it as observed_execution_times_line.png in the graphs directory. You can customize the directory by modifying the save_directory variable in the script.
