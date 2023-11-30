@@ -84,5 +84,7 @@ int main() {
     // Close the file
     outputFile.close();
 
+    std::cout << "Data file was made. Please view execution_times.csv for the data values.";
+
     return 0;
 }

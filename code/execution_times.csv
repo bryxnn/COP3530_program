@@ -1,0 +1,11 @@
+Dataset Size,Execution Time (ms),Is it sorted?
+10,0,Yes
+100,0,Yes
+1000,0,Yes
+5000,6,Yes
+10000,6,Yes
+50000,99,Yes
+100000,121,Yes
+250000,417,Yes
+500000,1637,Yes
+750000,2899,Yes
