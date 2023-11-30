@@ -100,4 +100,4 @@ Navigate to the code directory and run the Python script:
 cd code
 python plot_graphs.py
 
-The script generates a line graph of observed execution times and saves it as observed_execution_times_line.png in the graphs directory. You can customize the directory by modifying the save_directory variable in the script.
+The script generates a line graph of observed execution times and saves it as `observed_execution_times_line.png` in the graphs directory. You can customize the directory by modifying the save_directory variable in the script.
