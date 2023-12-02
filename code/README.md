@@ -1,4 +1,4 @@
-# BryxnM Algorithm Assignment
+# Bryxnn Algorithm Assignment
  
 # Quicksort Algorithm Performance Analysis
 
