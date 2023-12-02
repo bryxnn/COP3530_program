@@ -1,4 +1,4 @@
-# Bryan Mena Algorithm Assignment
+# BryxnM Algorithm Assignment
  
 # Quicksort Algorithm Performance Analysis
 
